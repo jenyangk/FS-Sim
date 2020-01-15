@@ -1,5 +1,22 @@
 # FS-Sim (File System simulator in C++)
 
+## Usage
+
+`./create_fs` creates a clean disk object.
+
+To start the file system simulator, enter `./fs_sim <disk_name>` in terminal.
+Within `./fs_sim` you can input a list of commands:
+- `M <disk name>`: Mount the file system residing on the disk
+- `C <file name> <file size>`: Create file or directory (size = 0)
+- `D <file name>`: Delete file or directory
+- `R <file name> <block number>`: Read file at Nth-Block
+- `W <file name> <block number>`: Write file at Nth-Block
+- `B <new buffer characters>`: Update buffer (up to 1024 characters)
+- `L`: List files and directories in current directory
+- `E <file name> <new size>`: Change files size 
+- `O`: Defragment the disk
+- `Y <directory name>`: Change the current working directory
+
 ## System Calls:
 
 System call `open` is used in `fs_mount` in `FileSystem.cpp` to open the disk so that we can perform `fs` operations on the disk.
